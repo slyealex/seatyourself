@@ -1,7 +1,13 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :ensure_logged_in, only: [:create, :destroy]
+
+  def all_restaurants
+    @restaurants = Restaurant.all
+  end
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.search(params[:search])
+
   end
 
   def new
@@ -20,6 +26,14 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+
+    if current_user
+      @review = @restaurant.reviews.build
+    end
+
+    if current_user
+      @reservation = @restaurant.reservations.build
+    end
   end
 
   def edit

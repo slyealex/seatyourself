@@ -1,1 +1,29 @@
-<p>This is our Homepage</p>
+<div class="container">
+  <h1>SeatYourself</h1>
+
+
+  <h2>Search For:</h2>
+
+  <%= form_tag restaurants_path, :method => 'get' do %>
+
+    <%= label_tag("Restaurant Name/Location/Category:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag("Search") %>
+
+  <% end %>
+
+
+  <h2>All Restaurants</h2>
+
+  <% @restaurants.each do |restaurant| %>
+    <p><%= restaurant.name %></p>
+    <p><%= restaurant.location %></p>
+    <p><%= restaurant.phone_number %></p>
+    <p><%= restaurant.category %></p>
+    <p><%= restaurant.description %></p>
+    <p><%= link_to "Make Reservation", "/restaurants/#{restaurant.id}" %></p>
+  <% end %>
+
+
+
+</div>

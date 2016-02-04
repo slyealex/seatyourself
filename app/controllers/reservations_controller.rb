@@ -1,15 +1,21 @@
 class ReservationsController < ApplicationController
-  def new
-    @reservation = Reservation.new
+  before_action :ensure_logged_in, only: [:create, :destroy]
+  before_action :load_restaurant
+
+  def show
+
   end
 
+
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = @restaurant.reservations.build(reservation_params)
+    @reservation.user = current_user
 
     if @reservation.save
       redirect_to restaurants_path, notice: "Your reservation has been created!"
     else
       render :new
+    end
   end
 
   def edit
@@ -36,5 +42,9 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:party_size, :time)
+  end
+
+  def load_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end
