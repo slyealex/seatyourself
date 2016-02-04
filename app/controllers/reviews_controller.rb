@@ -1,4 +1,4 @@
-class ReviewController < ApplicationController
+class ReviewsController < ApplicationController
 
   def create
 
@@ -9,6 +9,6 @@ class ReviewController < ApplicationController
   end
 
   def destroy
-    
+
   end
 end
