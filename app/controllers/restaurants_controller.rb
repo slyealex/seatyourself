@@ -31,11 +31,9 @@ class RestaurantsController < ApplicationController
 
     if current_user
       @review = @restaurant.reviews.build
-    end
-
-    if current_user
       @reservation = @restaurant.reservations.build
     end
+
   end
 
 

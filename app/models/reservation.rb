@@ -6,8 +6,8 @@ class Reservation < ActiveRecord::Base
   validate :restaurant_over_capacity
 
   def restaurant_over_capacity
-    if restaurant.available?(party_size, time)
-      errors.add("Too many people!")
+    unless restaurant.available?(self.party_size, self.start_time)
+      errors.add(:party_size, 'Not available')
     end
   end
 
