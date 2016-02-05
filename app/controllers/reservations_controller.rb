@@ -2,6 +2,9 @@ class ReservationsController < ApplicationController
   before_action :ensure_logged_in, only: [:create, :destroy]
   before_action :load_restaurant
 
+
+
+
   def show
 
   end
@@ -14,7 +17,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to restaurants_path, notice: "Your reservation has been created!"
     else
-      render :new
+      render restaurants_path
     end
   end
 
@@ -47,4 +50,7 @@ class ReservationsController < ApplicationController
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
+
+
+
 end
