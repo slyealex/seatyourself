@@ -7,12 +7,13 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.search(params[:search])
-
   end
+
 
   def new
     @restaurant = Restaurant.new
   end
+
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
@@ -23,6 +24,7 @@ class RestaurantsController < ApplicationController
       render :new
     end
   end
+
 
   def show
     @restaurant = Restaurant.find(params[:id])
@@ -36,9 +38,11 @@ class RestaurantsController < ApplicationController
     end
   end
 
+
   def edit
     @restaurant = Restaurant.find(params[:id])
   end
+
 
   def update
     @restaurant = Restaurant.find(params[:id])
@@ -49,6 +53,7 @@ class RestaurantsController < ApplicationController
       render :edit
     end
   end
+
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
@@ -61,4 +66,6 @@ class RestaurantsController < ApplicationController
   def restaurant_params
     params.require(:restaurant).permit(:name, :location, :phone_number, :category, :description, :url, :capacity, :rating)
   end
+
+
 end

@@ -21,9 +21,11 @@ class ReservationsController < ApplicationController
     end
   end
 
+
   def edit
     @reservation = Reservation.find(params[:id])
   end
+
 
   def update
     @reservation = Reservation.find(params[:id])
@@ -35,11 +37,13 @@ class ReservationsController < ApplicationController
     end
   end
 
+
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to restaurants_path, notice: "You have deleted your reservation!"
   end
+
 
   private
 
@@ -47,10 +51,10 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:party_size, :time)
   end
 
+
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
-
 
 
 end
