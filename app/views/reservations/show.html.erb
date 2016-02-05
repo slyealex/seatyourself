@@ -1,7 +1,8 @@
 <div>
   <h1>Your Reservations</h1>
 
-  <%= @reservations.each do |reservation| %>
+  <%= @user.reservations.each do |reservation| %>
+    <p> <%= "You just made a reservation for #{party_size} " %> </p>
     
   <% end %>
 
