@@ -1,41 +1,43 @@
 <div class="container">
-  <p>Add a new Restaurant</p>
-
+  <h2>Add a new Restaurant</h2>
+  <div class="form"
     <%= form_for @restaurant do |f| %>
       <div class="field">
-        <%= f.label :name %>
+        <div class="label">  <%= f.label :name  %> </div>
         <%= f.text_field :name %>
       </div>
       <div class="field">
-        <%= f.label :location %>
+        <div class="label"> <%= f.label :location %> </div>
         <%= f.text_field :location %>
       </div>
       <div class="field">
-        <%= f.label :phone_number %>
+        <div class="label"> <%= f.label :phone_number %> </div>
         <%= f.text_field :phone_number %>
       </div>
       <div class="field">
-        <%= f.label :category %>
+        <div class="label"> <%= f.label :category %> </div>
         <%= f.text_field :category %>
       </div>
       <div class="field">
-        <%= f.label :description %>
+        <div class="label"> <%= f.label :description %> </div>
         <%= f.text_area :description %>
       </div>
       <div class="field">
-        <%= f.label :url %>
+        <div class="label"> <%= f.label :url %> </div>
         <%= f.text_field :url %>
       </div>
       <div class="field">
-        <%= f.label :capacity %>
+        <div class="label"> <%= f.label :capacity %> </div>
         <%= f.number_field :capacity %>
       </div>
       <div class="field">
-        <%= f.label :rating %>
+        <div class="label"> <%= f.label :rating %> </div>
         <%= f.number_field :rating %>
       </div>
       <div class="actions">
-        <%= f.submit "Create" %>
+        <%= f.submit "Create", :class => "button" %>
       </div>
     <% end %>
+  </div>
+</p>
 </div>

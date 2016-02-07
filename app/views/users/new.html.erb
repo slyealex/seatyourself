@@ -1,18 +1,18 @@
 <div class="container">
 
   <h1>Sign Up</h1>
-
+<div class="form">
   <%= form_for @user do |f| %>
     <div class="field">
-      <%= f.label :email %>
+    <div class="label">  <%= f.label :email %> </div>
       <%= f.email_field :email %>
     </div>
     <div class="field">
-      <%= f.label :password %>
+    <div class="label">  <%= f.label :password %> </div>
       <%= f.password_field :password %>
     </div>
     <div class="field">
-      <%= f.label :password_confirmation %>
+    <div class="label">  <%= f.label :password_confirmation %> </div>
       <%= f.password_field :password_confirmation %>
     </div>
     <div class="actions">
@@ -20,4 +20,9 @@
     </div>
   <% end %>
 
+
+
 </div>
+</div>
+
+<p class="gif1"><img src="http://i.imgur.com/GUQWeLU.gif" alt="This will display an animated GIF" />
