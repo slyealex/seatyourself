@@ -18,3 +18,48 @@
 .rest_name {
   font-size: 40px;
 }
+
+.button {
+  color: #bbbbbb;
+  width: 200px;
+  height: 100px;
+}
+.field {
+
+}
+
+
+
+body {
+  margin-left: auto;
+  background-image: url("http://i.imgur.com/Cj06Obx.jpg");
+  position: fixed;
+  top: 0;
+  height: 700px;
+  width: 100%;
+}
+
+.field{
+  text-align: center;
+  color: white;
+}
+.label {
+  text-align: center;
+  color: white;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px px 0 #000;
+     font-family: 'Brush Script MT', cursive;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+
+.actions {
+  text-align: center;
+  color: white;
+}

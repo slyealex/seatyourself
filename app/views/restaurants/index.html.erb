@@ -1,29 +1,32 @@
-<div class="container">
-  <h1>SeatYourself</h1>
+<<<<<<< HEAD
+<body>
+  <div class="container">
+      <h1>Seat Yourself</h1>
   <%= link_to "Reservations", show_reservation_path %>
 
-  <h2>Search For:</h2>
 
-  <%= form_tag restaurants_path, :method => 'get' do %>
+    <h2>Search For</h2>
 
-    <%= label_tag("Restaurant Name/Location/Category:") %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag("Search") %>
+    <%= form_tag restaurants_path, :method => 'get' do %>
 
-  <% end %>
+      <p><%= label_tag("Restaurant Name, Location, or Category:") %></p>
+      <p><%= text_field_tag :search, params[:search] %></p>
+      <p><%= submit_tag("Seat Me") %></p>
+
+    <% end %>
+
+  <h6>This is to push shit around cause im lazy af</h6>
+
+    <h2>All Restaurants</h2>
+
+    <% @restaurants.each do |restaurant| %>
+      <p><%= restaurant.name %></p>
+      <p><%= restaurant.location %></p>
+      <p><%= restaurant.phone_number %></p>
+      <p><%= restaurant.category %></p>
+      <p><%= restaurant.description %></p>
+      <p><%= link_to "Make Reservation", "/restaurants/#{restaurant.id}" %></p>
+    <% end %>
 
 
-  <h2>Search Results</h2>
-
-  <% @restaurants.each do |restaurant| %>
-    <p><%= restaurant.name %></p>
-    <p><%= restaurant.location %></p>
-    <p><%= restaurant.phone_number %></p>
-    <p><%= restaurant.category %></p>
-    <p><%= restaurant.description %></p>
-    <p><%= link_to "Make Reservation", "/restaurants/#{restaurant.id}" %></p>
-  <% end %>
-
-
-
-</div>
+</body>

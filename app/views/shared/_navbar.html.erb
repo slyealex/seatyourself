@@ -1,14 +1,14 @@
 <nav>
-  <ul>
+  <ul id="left">
     <li><%= link_to "Home", restaurants_path %></li>
     <li><%= link_to "Add Restaurant", new_restaurant_path %></li>
     <li class="userinfo">
          <% if current_user %>
-           Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+            <p class="LoggedIn">Signed in as <%= current_user.email %></p> <%= link_to "Log out", session_path("current"), :method => :delete %>
          <% else %>
            <li><%= link_to "Log in", new_session_path %></li>
            <li><%= link_to "Sign up", new_user_path %></li>
          <% end %>
       </li>
-  </ul>
+    </ul>
 </nav>
